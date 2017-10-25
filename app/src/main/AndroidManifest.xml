@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.manolo.galeriaimagenesclase">
+    <!-- CAMBIO EL ICONO CON EL ANDROID ASSET -->
 
     <application
         android:allowBackup="true"
