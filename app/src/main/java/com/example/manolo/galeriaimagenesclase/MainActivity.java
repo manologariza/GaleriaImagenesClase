@@ -1,5 +1,6 @@
 package com.example.manolo.galeriaimagenesclase;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnPrevio, btnSiguiente;
     TextView tvDescripcion;
     ImageView ivCuadro;
+    //Creo un Object MediaPlayer
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnPrevio.setOnClickListener(this);
         btnSiguiente.setOnClickListener(this);
+        //instancio el MediaPlayer con el metodo create()
+        mp = MediaPlayer.create(this, R.raw.click);
     }
 
     @Override
@@ -63,12 +68,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i++;
             if(i==totalObras)
                 i=0;
+            //inicio el sonido
+            mp.start();
         }
 
         else {
             i--;
             if(i==-1)
                 i=totalObras-1;
+            mp.start();
         }
 
         ivCuadro.setImageResource(obraId[i]);
